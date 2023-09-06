@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=local
+      - POSTGRES_PASSWORD=local
+    ports:
+      - 5432:5432
+
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=local
+      - MYSQL_USER=local
+      - MYSQL_PASSWORD=local
+    ports:
+      - 3306:3306
+
+  redis:
+    image: redis:latest
+    environment:
+      - REDIS_PASSWORD=local
+    ports:
+      - 6379:6379
